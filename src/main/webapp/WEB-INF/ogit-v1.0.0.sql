@@ -92,12 +92,12 @@ CREATE SEQUENCE MEMBERS_BASCKET_SEQ;
 -- 장바구니
 ALTER TABLE MEMBERS_BASCKET
 	ADD
-		CONSTRAINT FK_MEMBERS_TO_MEMBERS_BASCKET -- 회원 -> 장바구니
+		CONSTRAINT FK_PRODUCT_DETAIL_MEMBASCKET -- 상품옵션 -> 장바구니
 		FOREIGN KEY (
-			members_id -- 회원식별번호
+			product_detail_seq -- 상품옵션식별번호
 		)
-		REFERENCES MEMBERS ( -- 회원
-			id -- 회원식별번호
+		REFERENCES PRODUCT_DETAIL ( -- 상품옵션
+			seq -- 식별번호
 		);
 
 -- 장바구니

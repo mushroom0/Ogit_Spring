@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="codi">
+	<insert id="insert" parameterType="codiDto">
+		INSERT INTO CODI (seq, members_id, category, name, writer, image_name, image_src, image_size, o_item_no, t_item_no,b_item_no,
+		 s_item_no,g_item_no,a_item_no, info, price, regist_date)  
+		VALUES (CODI_SEQ.NEXTVAL, #{members_id},#{category},#{name}, #{writer}, #{image_name}, #{image_src}, #{image_size}, #{o_item_no},
+		#{t_item_no}, #{b_item_no}, #{s_item_no}, #{g_item_no}, #{a_item_no}, #{info}, #{price}, SYSDATE)
+	</insert>
+	<select id="getList" resultType="codiDto">
+		SELECT seq, members_id,category, name, writer, image_name, o_item, t_item_no,b_item_no,
+		 s_item_no,g_item_no,a_item_no, info, price, liked, regist_date 
+		FROM CODI
+		ORDER BY seq DESC
+	</select>
+	<select id="detail" parameterType="int" resultType="codiDto">
+		SELECT seq, members_id,category, name, writer, image_name, o_item, t_item_no,b_item_no,
+		 s_item_no,g_item_no,a_item_no, info, price, liked, regist_date 
+		FROM CODI
+		WHERE seq=#{seq}
+	</select>
+	<select id="getName" parameterType="string" resultType="string">
+		SELECT name
+		FROM MEMBERS
+		WHERE id=#{members_id}
+	</select>
+</mapper>
+
+

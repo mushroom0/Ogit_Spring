@@ -6,12 +6,18 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 <configuration>
 
 	<typeAliases>
-
+		<typeAlias type="com.acon.ogit.codi.dto.CodiDto" alias="codiDto"/>
+		<typeAlias type="com.acon.ogit.codi.dto.CodiCommentDto" alias="codicommentDto"/>
+		<typeAlias type="com.acon.ogit.address.dto.AddressDto" alias="addressDto"/>
+		<typeAlias type="com.acon.ogit.memberbasket.dto.MemberBasketDto" alias="membasketDto"/>
 	</typeAliases>
 
 	<!-- SQL 문을 정의하고 있는 xml 문서 -->
 	<mappers>
-		<mapper resource="com/acon/ogit/mybatis/FileMapper.xml"/>
+		<mapper resource="com/acon/ogit/mybatis/CodiMapper.xml"/>
+		<mapper resource="com/acon/ogit/mybatis/MemBasketMapper.xml" />
+		<mapper resource="com/acon/ogit/mybatis/AddressMapper.xml" />
+		<mapper resource="com/acon/ogit/mybatis/CodiCommentMapper.xml"/>
 	</mappers>
 
 </configuration>

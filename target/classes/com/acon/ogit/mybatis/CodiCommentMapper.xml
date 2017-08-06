@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="codicomment">
+	<insert id="insert" parameterType="codicommentDto">
+		INSERT INTO CODI_COMMENT (RE_NO,codi_seq,nickname,content,regi_date)
+		VALUES(#{RE_NO}, #{codi_seq}, #{nickname},#{content},SYSDATE)
+	</insert>
+	<select id="getList" parameterType="int" resultType="codicommentDto">
+		SELECT nickname,content, regi_date,update_date,likes
+		FROM CODI_COMMENT
+		WHERE codi_seq=#{codi_seq}
+	</select>
+	<select id="getSequence" resultType="int">
+		SELECT CODI_COMMENT_seq.NEXTVAL 
+		FROM DUAL
+	</select>
+</mapper>
+
+
