@@ -56,15 +56,18 @@ public class CodiController {
 		public String Insert(HttpSession session, 
 				@ModelAttribute CodiDto dto){
 			//글 작성자를 읽어온다. 
-			String members_id=(String)session.getAttribute("members_id");	
-			String name=codiService.getName(members_id);
-			//codiDto 에 넣어준다
-			dto.setWriter(name);
+//			String members_id=(String)session.getAttribute("members_id");	
+//			String name=codiService.getName(members_id);
+//			//codiDto 에 넣어준다
+//			dto.setWriter(name);
 			//Service 객체를 이용해서 저장
 			codiService.insert(dto);
 			
 			return "redirect:/codi/list.do";
 		}
+		
+		
+		
 		
 		@RequestMapping("/codi/insertform")
 		public ModelAndView privateInsertForm(HttpServletRequest request){

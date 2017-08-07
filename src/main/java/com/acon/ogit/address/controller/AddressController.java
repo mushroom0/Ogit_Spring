@@ -46,4 +46,12 @@ public class AddressController {
 		
 		return mView;
 	}
+	
+	@RequestMapping("/address/list")
+	public ModelAndView getList(){
+		ModelAndView mView=addressService.getList();
+		mView.setViewName("address/list");
+		
+		return mView;
+	}
 }

@@ -8,8 +8,7 @@
 		#{t_item_no}, #{b_item_no}, #{s_item_no}, #{g_item_no}, #{a_item_no}, #{info}, #{price}, SYSDATE)
 	</insert>
 	<select id="getList" resultType="codiDto">
-		SELECT seq, members_id,category, name, writer, image_name, o_item, t_item_no,b_item_no,
-		 s_item_no,g_item_no,a_item_no, info, price, liked, regist_date 
+		SELECT *
 		FROM CODI
 		ORDER BY seq DESC
 	</select>

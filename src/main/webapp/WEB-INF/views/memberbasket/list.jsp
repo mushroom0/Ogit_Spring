@@ -11,21 +11,23 @@
 <table>
 	<thead>
 		<tr>
-			<th>글번호</th>
-			<th>제목</th>
-			<th>작성자</th>
-			<th>조회수</th>
-			<th>등록일</th>
+			<th>식별번호</th>
+			<th>회원식별번호</th>
+			<th>상품옵션식별번호</th>
+			<th>상품식별번호</th>
+			<th>상품명</th>
+			<th>수량</th>
 		</tr>
 	</thead>
 	<tbody>
 	<c:forEach var="tmp" items="${list }">
 		<tr>
-			<td>${tmp.num }</td>
-			<td><a href="detail.do?num=${tmp.num }">${tmp.title }</a></td>
-			<td>${tmp.writer }</td>
-			<td>${tmp.viewCount }</td>
-			<td>${tmp.regdate }</td>
+			<td>${tmp.seq }</td>
+			<td>${tmp.members_id}</td>
+			<td>${tmp.product_detail_seq }</td>
+			<td>${tmp.product_seq }</td>
+			<td>${tmp.product_name }</td>
+			<td>${tmp.bascket_count }</td>
 		</tr>
 	</c:forEach>
 	</tbody>

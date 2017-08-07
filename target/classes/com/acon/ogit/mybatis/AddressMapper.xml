@@ -8,9 +8,9 @@
 		#{address_detail},#{is_default},SYSDATE )
 	</insert>
 	<select id="getList" parameterType="string" resultType="addressDto">
-		SELECT seq,name
+		SELECT seq, members_id, name, recipient_name, 
+		recipient_phone, zipcode, address, address_detail,is_default,regist_date
 		FROM ADDRESS_BOOK
-		WHERE members_id=#{members_id}
 	</select>
 	<select id="detail" parameterType="int" resultType="addressDto"> 
 		SELECT seq, name, recipient_name, recipient_phone, zipcode, address, address_detail,is_default,regist_date,update_date

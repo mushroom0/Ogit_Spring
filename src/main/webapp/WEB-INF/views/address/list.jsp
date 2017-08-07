@@ -11,21 +11,33 @@
 <table>
 	<thead>
 		<tr>
-			<th>글번호</th>
-			<th>제목</th>
-			<th>작성자</th>
-			<th>조회수</th>
+			<th>식별번호</th>
+			<th>회원식별번호</th>
+			<th>배송지이름</th>
+			<th>받는사람이름</th>
+			<th>받는사람전화번호</th>
+			<th>우편번호</th>
+			<th>주소</th>
+			<th>상세주소</th>
+			<th>기본배송지여부</th>
 			<th>등록일</th>
+			<th>수정일</th>
 		</tr>
 	</thead>
 	<tbody>
 	<c:forEach var="tmp" items="${list }">
 		<tr>
-			<td>${tmp.num }</td>
-			<td><a href="detail.do?num=${tmp.num }">${tmp.title }</a></td>
-			<td>${tmp.writer }</td>
-			<td>${tmp.viewCount }</td>
-			<td>${tmp.regdate }</td>
+			<td>${tmp.seq}</td>
+			<td>${tmp.members_id }</a></td>
+			<td>${tmp.name }</td>
+			<td>${tmp.recipient_name }</td>
+			<td>${tmp.recipient_phone }</td>
+			<td>${tmp.zipcode }</td>
+			<td>${tmp.address }</td>
+			<td>${tmp.address_detail }</td>
+			<td>${tmp.is_default }</td>
+			<td>${tmp.regist_date }</td>
+			<td>${tmp.update_date }</td>
 		</tr>
 	</c:forEach>
 	</tbody>

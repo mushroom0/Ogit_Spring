@@ -31,7 +31,7 @@ public class MemberBasketController {
 	@RequestMapping("/memberbasket/insert")
 	public String insert(HttpSession session,@ModelAttribute MemberBasketDto dto){
 		
-		String members_id=(String)session.getAttribute("members_id");
+		String members_id="exampleid";
 		dto.setMembers_id(members_id);
 		membasService.insert(dto);
 		
@@ -44,6 +44,14 @@ public class MemberBasketController {
 		String members_id=(String)session.getAttribute("members_id");
 		ModelAndView mView=membasService.detail(members_id);
 		mView.setViewName("memberbasket/detail");
+		
+		return mView;
+	}
+	
+	@RequestMapping("/memberbasket/list")
+	public ModelAndView list(){
+		ModelAndView mView=membasService.getList();
+		mView.setViewName("memberbasket/list");
 		
 		return mView;
 	}

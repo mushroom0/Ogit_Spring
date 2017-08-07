@@ -7,6 +7,6 @@ import com.acon.ogit.address.dto.AddressDto;
 public interface AddressService {
 	
 	public void insert(AddressDto dto);
-	public ModelAndView list(String members_id);
+	public ModelAndView getList();
 	public ModelAndView detail(int seq);
 }

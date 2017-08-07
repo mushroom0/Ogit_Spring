@@ -8,6 +8,8 @@
 <title>Insert title here</title>
 </head>
 <body>
+<form action="insert.do" method="post">
 
+</form>
 </body>
 </html>

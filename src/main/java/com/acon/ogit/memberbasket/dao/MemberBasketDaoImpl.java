@@ -1,5 +1,7 @@
 package com.acon.ogit.memberbasket.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -21,6 +23,12 @@ public class MemberBasketDaoImpl implements MemberBasketDao{
 	public MemberBasketDto getData(String members_id) {
 		MemberBasketDto dto=session.selectOne("membersbasket.getData", members_id);
 		return dto;
+	}
+
+	@Override
+	public List<MemberBasketDto> getList() {
+		List<MemberBasketDto> list=session.selectList("membersbasket.getList");
+		return list;
 	}
 
 }

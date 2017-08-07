@@ -6,6 +6,10 @@
 		(seq, members_id, product_detail_seq, product_seq, product_name,bascket_count) 
 		VALUES (MEMBERS_BASCKET_SEQ.NEXTVAL, #{members_id},#{product_detail_seq}, #{product_seq}, #{product_name}, #{bascket_count})
 	</insert>
+	<select id="getList" resultType="membasketDto">
+		SELECT *
+		FROM MEMBERS_BASCKET
+	</select>
 	<select id="getData" parameterType="string" resultType="membasketDto">
 		 SELECT product_detail_seq, product_seq, product_name, product_count
 		 FROM MEMBERS_BASCKET

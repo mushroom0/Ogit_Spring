@@ -21,8 +21,8 @@ public class AddressDaoImpl implements AddressDao{
 	}
 
 	@Override
-	public List<AddressDto> getList(String members_id) {
-		List<AddressDto> list=session.selectList("address.getList",members_id);
+	public List<AddressDto> getList() {
+		List<AddressDto> list=session.selectList("address.getList");
 		return list;
 	}
 

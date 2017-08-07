@@ -11,7 +11,7 @@
 <a href="codi/list.do">코디 목록</a>
 <a href="codi/insertform.do">코디 넣기</a>
 <a href="memberbasket/list.do">장바구니 보기</a>
-<a href="memberbasket/insert.do">장바구니 추가</a>
+<a href="memberbasket/insertform.do">장바구니 추가</a>
 <a href="address/list.do">배송지보기</a>
 <a href="address/insertform.do">배송지 입력</a>
 

@@ -21,8 +21,8 @@ public class AddressServiceImpl implements AddressService{
 	}
 
 	@Override
-	public ModelAndView list(String members_id) {
-		List<AddressDto> list=addressDao.getList(members_id);
+	public ModelAndView getList() {
+		List<AddressDto> list=addressDao.getList();
 		ModelAndView mView=new ModelAndView();
 		mView.addObject("list", list);
 		return mView;

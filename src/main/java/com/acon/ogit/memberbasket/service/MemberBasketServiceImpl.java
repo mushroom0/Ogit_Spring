@@ -1,5 +1,7 @@
 package com.acon.ogit.memberbasket.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.servlet.ModelAndView;
@@ -23,6 +25,14 @@ public class MemberBasketServiceImpl implements MemberBasketService{
 		ModelAndView mView=new ModelAndView();
 		MemberBasketDto dto=basketDao.getData(members_id);
 		mView.addObject("dto",dto);
+		return mView;
+	}
+
+	@Override
+	public ModelAndView getList() {
+		ModelAndView mView=new ModelAndView();
+		List<MemberBasketDto> list=basketDao.getList();
+		mView.addObject("list", list);
 		return mView;
 	}
 
